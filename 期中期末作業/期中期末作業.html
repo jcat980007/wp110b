@@ -6,8 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>橘色哈密瓜OAO</title>
 </head>
-<body style="background-color:rgb(255, 153, 0);text-align: center;">
+<body style="background-color:rgb(255, 153, 0);text-align: center;" onload="startTime()">
     <h1 style="color:rgb(192, 76, 76)">范揚政的個人網站</h1>
+    <script>
+        function startTime()
+        {
+            var today = new Date();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            document.getElementById('clock').innerHTML = hh + ":" + mm + ":" + ss;
+            var timeoutId = setTimeout(startTime, 500);
+        }
+        function checkTime(i)
+        {
+            if(i < 10)
+            {
+              i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+    <style>
+    #clock
+    {
+    color:white;
+    font: 2em sans-serif; 
+    background: rgb(133, 255, 63); 
+    margin: 5px;
+    padding: 5px;
+    border: solid rgb(238, 255, 7) 2px; 
+    border-radius: 10px;
+    width:160px;
+    text-align:center;
+    }
+    </style>
     <p style="color: white;font-size: 200%">
         <img src="https://scontent.ftpe8-1.fna.fbcdn.net/v/t1.6435-9/154460621_1394804547539329_5023289910704102754_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=t7hsvBsgitcAX92nRRn&tn=UHDpys_We2fgviKJ&_nc_ht=scontent.ftpe8-1.fna&oh=00_AT-02wePR6KB9971HcbKWj0G7uTGipgE409M1QsqY8INJA&oe=62C77971" width="256"><br>
         生日：2003/08/05<br>
@@ -38,6 +73,7 @@
             </td>
         </tr>
     </table>
+    <div id="clock"></div>
     <h3>學習小天地</h3>
     <p>日文區</p>
     <hr/>
